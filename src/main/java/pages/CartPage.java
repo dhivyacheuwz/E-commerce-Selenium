@@ -2,10 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.testng.asserts.SoftAssert;
-
 import utils.WaitUtils;
 
 public class CartPage {
@@ -14,7 +10,7 @@ public class CartPage {
 	By proceed_checkout = By.xpath("//*[@class='btn btn-default check_out']");
 	By modal = By.cssSelector("div.modal-content");
 	WebDriver driver;
-	SoftAssert softAssert = new SoftAssert();
+	
 
 	public CartPage(WebDriver driver) {
 		this.driver = driver;
