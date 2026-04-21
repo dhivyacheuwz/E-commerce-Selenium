@@ -17,6 +17,7 @@ It follows best practices used in modern QA automation including **Page Object M
 * ✅ Reusable utilities & base classes
 * ✅ Logging
 * ✅ Scalable and maintainable architecture
+* ✅ Extent Report and Allure Report
 
 ---
 
@@ -38,6 +39,7 @@ It follows best practices used in modern QA automation including **Page Object M
 * **BDD:** Cucumber
 * **Build Tool:** Maven
 * **Version Control:** Git & GitHub
+* **Report:** Extent Report,Allure Report
 
 ---
 
@@ -107,7 +109,6 @@ JsonPay=/src/test/resources/testdata/payment.json
 * 🌐 Parallel execution
 * 📱 Mobile testing support
 * 🔗 API automation integration
-* Reporting
 
 ---
 
