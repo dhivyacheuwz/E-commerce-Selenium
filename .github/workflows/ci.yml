@@ -41,4 +41,3 @@ steps:
       path: |
         target/
         test-output/
-```
