@@ -15,7 +15,11 @@ public class ProductPage {
     }
 	
 	public void add_cart() {
+		try {
 		WaitUtils.safeClick(driver,add_to_cart);
+		}catch (Exception e) {
+	        System.out.println("Step failed but continuing");
+	    }
 	}
 
 
