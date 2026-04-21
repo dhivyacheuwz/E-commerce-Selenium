@@ -1,0 +1,85 @@
+# =========================
+
+# Java / Maven / Gradle
+
+# =========================
+
+target/
+build/
+out/
+.gradle/
+.classpath
+.project
+.settings/
+
+# Compiled class files
+
+*.class
+
+# Logs
+
+logs/
+*.log
+
+# =========================
+
+# IDE Files
+
+# =========================
+
+# Eclipse
+
+.metadata/
+.recommenders/
+
+# IntelliJ
+
+.idea/
+*.iml
+
+# VS Code
+
+.vscode/
+
+# =========================
+
+# OS Files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# Test Reports
+
+# =========================
+
+# Extent Reports
+
+test-output/
+extent-report/
+reports/
+spark-report/
+cucumber-reports/
+
+
+
+# =========================
+
+# Temporary Files
+
+# =========================
+
+*.tmp
+*.swp
+*~
+
+# ==================================
+
+# Mac/Linux hidden files
+
+# =========================
+
+._*
