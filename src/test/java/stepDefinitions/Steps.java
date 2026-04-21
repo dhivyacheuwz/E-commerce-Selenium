@@ -4,10 +4,7 @@ package stepDefinitions;
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import com.aventstack.extentreports.model.Log;
 
 import factory.DriverFactory;
 import hooks.Hooks;
