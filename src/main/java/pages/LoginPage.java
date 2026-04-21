@@ -17,17 +17,15 @@ public class LoginPage {
 	By error = By.xpath("//*[text()='Your email or password is incorrect!']");
 
 	public void log_link() {
-		
+
 		DriverFactory.getDriver().findElement(loginLink).click();
 	}
 
 	public void login(String user, String pass) {
 
-		
 		DriverFactory.getDriver().findElement(email).sendKeys(user);
 		DriverFactory.getDriver().findElement(password).sendKeys(pass);
 		DriverFactory.getDriver().findElement(loginBtn).click();
-		
 
 	}
 
@@ -45,13 +43,12 @@ public class LoginPage {
 	}
 
 	public void logout() {
-		
-		DriverFactory.getDriver().findElement(logoutBtn).click();}
-		
-	
+
+		DriverFactory.getDriver().findElement(logoutBtn).click();
+	}
 
 	public boolean homepage() {
-		
+
 		String expectedUrl = ConfigReader.get("expectedhome");
 		String actualUrl = DriverFactory.getDriver().getCurrentUrl();
 		Assert.assertEquals(actualUrl, expectedUrl);
@@ -60,7 +57,7 @@ public class LoginPage {
 
 	public String errormsg() {
 		return DriverFactory.getDriver().findElement(error).getText();
-		
+
 	}
 
 }

@@ -1,10 +1,36 @@
+name: Selenium CI Pipeline
 
-name: Run Tests
-on: [push]
+on:
+push:
+branches: [ "main" ]
+pull_request:
+branches: [ "main" ]
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run Tests
-        run: mvn clean test
+test:
+runs-on: ubuntu-latest
+
+steps:
+- name: Checkout Code
+  uses: actions/checkout@v4
+
+- name: Set up Java
+  uses: actions/setup-java@v4
+  with:
+    distribution: 'temurin'
+    java-version: '17'
+
+- name: Install Dependencies
+  run: mvn clean install -DskipTests
+
+- name: Run Tests
+  run: mvn test
+
+- name: Upload Test Reports
+  if: always()
+  uses: actions/upload-artifact@v4
+  with:
+    name: Test-Reports
+    path: |
+      target/
+      test-output/

@@ -24,29 +24,28 @@ public class Paymentpage {
 
 	public void enterPaymentDetails(PaymentData data) {
 
-	
-			WaitUtils.blockAdsContinuously(driver);
-			WaitUtils.type(driver, name, data.getNameOnCard());
-			WaitUtils.type(driver, cardnumber, data.getCardNumber());
-			WaitUtils.type(driver, cvc, data.getCvv());
-			WaitUtils.type(driver, Expmonth, data.getExpiryMonth());
-			WaitUtils.type(driver, Expyear, data.getExpiryYear());
-	
+		WaitUtils.blockAdsContinuously(driver);
+		WaitUtils.type(driver, name, data.getNameOnCard());
+		WaitUtils.type(driver, cardnumber, data.getCardNumber());
+		WaitUtils.type(driver, cvc, data.getCvv());
+		WaitUtils.type(driver, Expmonth, data.getExpiryMonth());
+		WaitUtils.type(driver, Expyear, data.getExpiryYear());
+
 	}
 
 	public void clickPay() {
-		
-			WaitUtils.blockAdsContinuously(driver);
-			WaitUtils.safeClick(driver, pay);
-		
+
+		WaitUtils.blockAdsContinuously(driver);
+		WaitUtils.safeClick(driver, pay);
+
 	}
 
 	// 🔍 Validation Methods
 	public void isPaymentSuccessful() {
-		
-			WaitUtils.blockAdsContinuously(driver);
-			System.out.println(WaitUtils.getText(driver, successMsg));
-		
+
+		WaitUtils.blockAdsContinuously(driver);
+		System.out.println(WaitUtils.getText(driver, successMsg));
+
 	}
 
 }
