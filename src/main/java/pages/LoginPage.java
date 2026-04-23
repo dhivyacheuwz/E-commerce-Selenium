@@ -51,7 +51,7 @@ public class LoginPage {
 
 		String expectedUrl = ConfigReader.get("expectedhome");
 		String actualUrl = DriverFactory.getDriver().getCurrentUrl();
-		System.out.println(actualUrl.equalsIgnoreCase(expectedUrl));
+		System.out.println(actualUrl.equalsIgnoreCase(expectedUrl) );
 		return true;
 	}
 

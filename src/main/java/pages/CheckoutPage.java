@@ -16,7 +16,7 @@ public class CheckoutPage {
 
 	public void clickCheckout() {
 
-		WaitUtils.blockAdsContinuously(driver);
+		
 		WaitUtils.safeClick(driver, place_order);
 
 	}

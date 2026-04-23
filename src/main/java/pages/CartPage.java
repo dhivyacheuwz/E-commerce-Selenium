@@ -18,7 +18,7 @@ public class CartPage {
 
 	public void clickCheckout() {
 
-		WaitUtils.blockAdsContinuously(driver);
+		
 		WaitUtils.waitForVisibility(driver, modal);
 		WaitUtils.click(driver, contshop);
 		WaitUtils.safeClick(driver, view_cart);

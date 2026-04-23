@@ -57,36 +57,38 @@ public class WaitUtils {
 		        "document.querySelectorAll(\"iframe, div[id^='aswift']\").forEach(el => el.remove());" +
 		        "}, 500);"
 		    );
+		    
+		    js.executeScript(
+		            "document.querySelectorAll('ins.adsbygoogle').forEach(el => {" +
+		            "  if (window.getComputedStyle(el).position === 'fixed') {" +
+		            "    el.remove();" +
+		            "  }" +
+		            "});"
+		        );
 		}	
 
 	 public static void safeClick(WebDriver driver, By locator) {
- {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
-	    try {
-	        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
 
-	    } catch (ElementClickInterceptedException e) {
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		 blockAdsContinuously(driver);
 
-	        // Wait for modal
-	        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".modal-content")));
+		    WebElement element = wait.until(
+		        ExpectedConditions.presenceOfElementLocated(locator)
+		    );
 
-	        // Wait for ads overlay
-	        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div[id^='aswift']")));
-	    	((JavascriptExecutor) driver).executeScript("document.querySelectorAll('iframe').forEach(e => e.remove());");
+		    // Scroll into view
+		    ((JavascriptExecutor) driver).executeScript(
+		        "arguments[0].scrollIntoView({block:'center'});", element
+		    );
 
-	        // Retry
-	        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-	        ((JavascriptExecutor) driver).executeScript(
-				    "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
-				    element);
-			// click
-			element.click();
-	    }
-	}
-
- 
-	 }
+		    try {
+		        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+		    } catch (Exception e) {
+		        // Fallback (this is key)
+		        ((JavascriptExecutor) driver).executeScript(
+		            "arguments[0].click();", element
+		        );
+		    }
+	 }}
 	 
-}

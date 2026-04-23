@@ -43,7 +43,7 @@ public class Paymentpage {
 	// 🔍 Validation Methods
 	public void isPaymentSuccessful() {
 
-		WaitUtils.blockAdsContinuously(driver);
+		
 		System.out.println(WaitUtils.getText(driver, successMsg));
 
 	}
