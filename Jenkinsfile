@@ -8,11 +8,11 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/dhivyacheuwz/E-commerce-Selenium.git'
-            }
-        }
+       stage('Checkout') {
+    steps {
+        git branch: 'main', url: 'https://github.com/dhivyacheuwz/E-commerce-Selenium.git'
+    }
+}
 
         stage('Build & Test') {
             steps {
