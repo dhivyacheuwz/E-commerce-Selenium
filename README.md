@@ -18,6 +18,7 @@ It follows best practices used in modern QA automation including **Page Object M
 * ✅ Logging
 * ✅ Scalable and maintainable architecture
 * ✅ Extent Report and Allure Report
+* ✅ CI pipeline on push
 
 ---
 
@@ -105,7 +106,6 @@ JsonPay=/src/test/resources/testdata/payment.json
 
 ## 💡 Future Enhancements
 
-* 🔄 CI/CD integration (GitHub Actions)
 * 🌐 Parallel execution
 * 📱 Mobile testing support
 * 🔗 API automation integration
