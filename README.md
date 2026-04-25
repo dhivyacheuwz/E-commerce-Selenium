@@ -18,7 +18,7 @@ It follows best practices used in modern QA automation including **Page Object M
 * ✅ Logging
 * ✅ Scalable and maintainable architecture
 * ✅ Extent Report and Allure Report
-* ✅ CI pipeline on push
+* ✅ Jenkins
 
 ---
 
@@ -41,6 +41,7 @@ It follows best practices used in modern QA automation including **Page Object M
 * **Build Tool:** Maven
 * **Version Control:** Git & GitHub
 * **Report:** Extent Report,Allure Report
+* **CICD:** Jenkins
 
 ---
 
@@ -63,7 +64,12 @@ src
  ├── resources
  │   ├── config.properties
  │   ├── features
- │   ├── testdata
+ │── Jekinsfile
+ │── testng.xml
+ │── pom.xml
+ │── extent.properties
+ |── README.md 
+
 ```
 
 ---
